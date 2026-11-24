@@ -51,6 +51,14 @@ public partial class Monocycle {
                 }
                 break;
             }
+            case Mthi mthi: {
+                Registers.Set(MipsGprRegisters.Hi, Registers.Get<MipsGprRegisters>(mthi.Rs));
+                break;
+            }
+            case Mfhi mfhi: {
+                Registers.Set<MipsGprRegisters>(mfhi.Rd, Registers.Get(MipsGprRegisters.Hi));
+                break;
+            }
             case Mtlo mtlo: {
                 Registers.Set<MipsGprRegisters>(mtlo.Rs, Registers.Get(MipsGprRegisters.Lo));
                 break;
